@@ -1,6 +1,70 @@
-# Getting Started with Create React App
+## Test Task Tweet Cards - README
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal of this project is to create tweet cards and add interactivity when clicking the button.
+This repository contains the implementation of the Tweet Cards project, which showcases interactive tweet cards with a follow/following system. Users can click a button to toggle between the follow and following states, with the follower count dynamically updated.
+
+## Features
+
+Display tweet cards with two states: Follow and Following.
+Fixed layout using pixel-based design for consistency.
+Semantically correct and valid HTML structure.
+Error-free implementation with no console errors.
+Built with either native JavaScript or React.
+Interactive functionality as per the provided technical requirements.
+Well-formatted and commented code.
+Includes a README.md file for project documentation.
+
+## Technical Requirements
+
+Tweet cards are created based on the provided design.
+Clicking the Follow button changes its text to "Following," updates the button color, and increments the follower count by one.
+User actions persist even after page refresh. The button remains in the Following state with the correct color, and the follower count does not reset to the initial value.
+Clicking the button again reverts its text, color, and follower count to the initial state. The follower count decreases by one.
+The follower count is based on a constant value (e.g., 100,500) and is displayed with comma separation in the UI (e.g., 100,500).
+
+## Backend Setup
+
+The project utilizes a custom backend created using the UI service mockapi.io.
+A "users" resource is defined with the following fields: id, user, tweets, followers, and avatar.
+The backend contains at least 12 users with various values for testing purposes.
+Pagination is implemented to display three tweets per page, with additional tweets loaded upon clicking the "Load More" button.
+
+## Additional Task (Optional)
+
+Enhance the application's navigation by implementing routing using React Router:
+
+Create the following routes:
+'/' - Home component, the main homepage of the application.
+'/tweets' - Tweets component, a page displaying the tweets.
+Include a Back button on the Tweets page to allow users to navigate back to the homepage
+
+## Libraries Used
+
+The project utilizes the following libraries:
+
+@emotion/react: ^11.11.0
+@emotion/styled: ^11.11.0
+@mui/material: ^5.13.3
+@testing-library/jest-dom: ^5.16.5
+@testing-library/react: ^13.4.0
+@testing-library/user-event: ^13.5.0
+axios: ^1.4.0
+notiflix: ^3.2.6
+react: ^18.2.0
+react-dom: ^18.2.0
+react-router-dom: ^6.11.1
+react-scripts: 5.0.1
+web-vitals: ^2.1.4
+
+## Getting Started
+
+To get started with the project, follow these steps:
+
+Clone the repository: git clone <repository-url>
+Install the dependencies: npm install
+Start the application: npm start
+Open your browser and visit http://localhost:3000 to view the application.
 
 ## Available Scripts
 
@@ -45,26 +109,10 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please create a new issue or submit a pull request.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. Feel free to modify and use it according to your needs.
