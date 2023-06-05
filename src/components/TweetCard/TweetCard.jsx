@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { formatNumber } from "../../helpers/helpers";
 import {
@@ -73,3 +74,10 @@ export default function TweetCard({ tweets, followers, avatar, id }) {
     </CardContainer>
   );
 }
+
+TweetCard.propTypes = {
+  tweets: PropTypes.number.isRequired,
+  followers: PropTypes.number.isRequired,
+  avatar: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};

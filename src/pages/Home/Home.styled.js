@@ -42,4 +42,19 @@ export const HeroSubText = styled.p`
   border-radius: 10px;
   right: 190px;
   top: 280px;
+  background: var(--accent-gradient);
+  color: var(--white-color);
+`;
+
+export const SubText = styled.p`
+  position: absolute;
+  max-width: 350px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  left: 150px;
+  top: 200px;
+  background: var(--accent-gradient);
+  color: var(--white-color);
 `;
