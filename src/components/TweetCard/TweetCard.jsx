@@ -15,11 +15,6 @@ export default function TweetCard({ tweets, followers, avatar, id }) {
     const storedFollowerCounts = localStorage.getItem(`followerCounts_${id}`);
     return storedFollowerCounts ? JSON.parse(storedFollowerCounts) : followers;
   });
-  // const [followingUsers, setFollowingUsers] = useState(
-  //   localStorage.getItem("followingUsers")
-  //     ? JSON.parse(localStorage.getItem("followingUsers"))
-  //     : []
-  // );
 
   useEffect(() => {
     const storedFollowings = localStorage.getItem(`followings_${id}`);
@@ -55,20 +50,6 @@ export default function TweetCard({ tweets, followers, avatar, id }) {
       );
       return updatedFollowing;
     });
-
-    // setFollowingUsers((prevState) => {
-    //   let updatedFollowingUsers;
-    //   if (prevState.includes(id)) {
-    //     updatedFollowingUsers = prevState.filter((user) => user !== id);
-    //   } else {
-    //     updatedFollowingUsers = [...prevState, id];
-    //   }
-    //   localStorage.setItem(
-    //     "followingUsers",
-    //     JSON.stringify(updatedFollowingUsers)
-    //   );
-    //   return updatedFollowingUsers;
-    // });
   };
 
   return (

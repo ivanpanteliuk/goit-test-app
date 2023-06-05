@@ -6,6 +6,7 @@ import { GoBackBtn, List, ListItem, LoadMoreBtn } from "./Tweets.styled";
 import { fetchTweets } from "../../services/tweetsApi";
 import { Notify } from "notiflix";
 import { useLocation } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 
 const notifyOptions = {
   width: "450px",
@@ -68,6 +69,7 @@ export default function Tweets() {
   return (
     <Section>
       <Container>
+        {isLoading && <Loader />}
         <GoBackBtn to={backPath.current}>Go back</GoBackBtn>
         <Dropdown value={filter} onChange={handleChange} />
         <List>
