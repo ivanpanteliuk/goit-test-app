@@ -23,11 +23,11 @@ export const LoadMoreBtn = styled(Button)`
 export const GoBackBtn = styled(Link)`
   position: fixed;
   top: 130px;
-  left: 200px;
-  // display: block;
+  left: 10px;
+
   padding: 14px 28px;
-  // margin-bottom: 26px;
-  width: 196px;
+
+  width: 150px;
 
   font-family: inherit;
   font-style: normal;
