@@ -1,6 +1,5 @@
 ## Test Task Tweet Cards - README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 The goal of this project is to create tweet cards and add interactivity when clicking the button.
 This repository contains the implementation of the Tweet Cards project, which showcases interactive tweet cards with a follow/following system. Users can click a button to toggle between the follow and following states, with the follower count dynamically updated.
 
@@ -105,6 +104,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Learn More
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
