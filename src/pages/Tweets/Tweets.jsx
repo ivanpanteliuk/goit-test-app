@@ -29,6 +29,7 @@ export default function Tweets() {
   const location = useLocation();
   const backPath = useRef(location.state?.from ?? "/");
   const [filter, setFilter] = useState("show all");
+  const [filteredUsers, setFilteredUsers] = useState([]);
 
   const getTweets = useCallback(async (page) => {
     try {
@@ -47,6 +48,32 @@ export default function Tweets() {
     getTweets(page);
   }, [getTweets, page]);
 
+  useEffect(() => {
+    const filterFromLS = localStorage.getItem("filter");
+    console.log(filterFromLS);
+    if (filterFromLS) setFilter(filterFromLS);
+  }, []);
+
+  useEffect(() => {
+    const updatedFilteredUsers = users
+      .map((user) => ({
+        ...user,
+        isFollowing: localStorage.getItem(`followings_${user.id}`)
+          ? JSON.parse(localStorage.getItem(`followings_${user.id}`))
+          : user.isFollowing || false,
+      }))
+      .filter((user) => {
+        if (filter === "follow") {
+          return !user.isFollowing;
+        } else if (filter === "followings") {
+          return user.isFollowing;
+        }
+        return true;
+      });
+    localStorage.setItem("filter", filter);
+    setFilteredUsers(updatedFilteredUsers);
+  }, [users, filter]);
+
   const onLoadMoreClick = () => {
     setPage((prevPage) => prevPage + 1);
   };
@@ -55,35 +82,26 @@ export default function Tweets() {
     setFilter(evt.target.value.toLowerCase());
   };
 
-  const filteredUsers = users.filter((user) => {
-    if (filter === "show all") {
-      return true;
-    } else if (filter === "follow") {
-      return user.followers > 0;
-    } else if (filter === "followings") {
-      return user.isFollowing;
-    }
-    return false;
-  });
-
   return (
     <Section>
       <Container>
         {isLoading && <Loader />}
         <GoBackBtn to={backPath.current}>Go back</GoBackBtn>
         <Dropdown value={filter} onChange={handleChange} />
-        <List>
-          {filteredUsers.map(({ tweets, followers, avatar, id }) => (
-            <ListItem key={id}>
-              <TweetCard
-                tweets={tweets}
-                followers={followers}
-                avatar={avatar}
-                id={id}
-              />
-            </ListItem>
-          ))}
-        </List>
+        {filteredUsers.length !== 0 && (
+          <List>
+            {filteredUsers.map(({ tweets, followers, avatar, id }) => (
+              <ListItem key={id}>
+                <TweetCard
+                  tweets={tweets}
+                  followers={followers}
+                  avatar={avatar}
+                  id={id}
+                />
+              </ListItem>
+            ))}
+          </List>
+        )}
         {filteredUsers.length !== 0 && isVisibleButton && (
           <LoadMoreBtn
             type="button"
