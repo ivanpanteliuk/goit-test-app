@@ -50,7 +50,6 @@ export default function Tweets() {
 
   useEffect(() => {
     const filterFromLS = localStorage.getItem("filter");
-    console.log(filterFromLS);
     if (filterFromLS) setFilter(filterFromLS);
   }, []);
 

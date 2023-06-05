@@ -40,6 +40,6 @@ export const HeroSubText = styled.p`
   border: 1px solid black;
   padding: 10px;
   border-radius: 10px;
-  right: 200px;
+  right: 190px;
   top: 280px;
 `;
